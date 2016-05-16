@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CAAlertView.h"
-@interface ViewController : UIViewController <CAAlertViewDelegate>
 
-- (IBAction)btnShowAlert:(id)sender;
+@interface ViewController : UIViewController 
+
 @end

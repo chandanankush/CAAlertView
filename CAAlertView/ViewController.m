@@ -7,28 +7,51 @@
 //
 
 #import "ViewController.h"
+#import "CAAlertView.h"
+
+@interface ViewController () <CAAlertViewDelegate>
+
+@property (nonatomic, strong) CAAlertView *alertView;
+
+@end
+
 
 @implementation ViewController
 
-CAAlertView *alertView;
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (IBAction)btnShowAlert:(id)sender {
-    alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeDatePicker andData:[NSArray arrayWithObjects:@"Apple", @"Banana",@"Mango",@"Papaya",@"Grapes", nil]];
-    [alertView setDelegate:self];
-    [alertView showAlertView];
+- (IBAction)btnShowDataAlert:(id)sender {
+    
+    NSMutableArray *objectToShow = [[NSMutableArray alloc] init];
+    for (int i = 0; i<=10; i++) {
+        CACustomAlertObject *object = [[CACustomAlertObject alloc] initWithObjectName:[NSString stringWithFormat:@"chandan %d",i] AndID:i];
+        [objectToShow addObject:object];
+    }
+    
+    _alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeTable andData:objectToShow];
+    [_alertView setDelegate:self];
+    [_alertView showAlertView:sender];
 }
+
+
+- (IBAction)btnShowDateAlert:(id)sender {
+    
+    _alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeDatePicker andData:nil];
+    [_alertView setDelegate:self];
+    [_alertView showAlertView:sender];
+}
+
 
 - (void) CAAlertView:(CAAlertView *) obj completedWithData:(NSArray *) data {
-    NSLog(@"%@",data);
+    NSLog(@"%@", data);
 }
 
-- (void) CAAlertView:(CAAlertView *) obj cancelledWithNoData:(NSArray *) info {
-    
+- (void) CAAlertView:(CAAlertView *) obj cancelledWithNoData:(NSString *) info {
+    NSLog(@"%@", info);
 }
 
 
