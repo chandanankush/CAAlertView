@@ -129,10 +129,11 @@ NSString *kformatDateAndTimeToString(NSDate *date);
         _tablePopOver = [[CAPopOverViewController alloc] initWithDataSource:objectArray];
         [_tablePopOver setDelegate:self];
     }else {
-        _tablePopOver = (CAPopOverViewController *)myPopOver.contentViewController;
-        [_tablePopOver modefyDataSource:objectArray];
+        [_tablePopOver modifyDataSource:objectArray];
     }
     _tablePopOver.isMultipleSelectionAllowed = _isMultipleSelectionAllowed;
+    
+    _tablePopOver.preferredContentSize = CGSizeMake(200.0f, 300.0f);
     _tablePopOver.modalPresentationStyle = UIModalPresentationPopover;
     return _tablePopOver;
 }
@@ -151,6 +152,7 @@ NSString *kformatDateAndTimeToString(NSDate *date);
     else{
         [_datePickerPopOver.myDatePicker setMinimumDate:[NSDate date]];
     }
+    _datePickerPopOver.preferredContentSize = CGSizeMake(300.0f, 150.0f);
     _datePickerPopOver.modalPresentationStyle = UIModalPresentationPopover;
     
     return _datePickerPopOver;

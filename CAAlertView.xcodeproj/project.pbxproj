@@ -21,6 +21,7 @@
 		5822EEC81CE9C49A00588EB7 /* CAPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5822EEC21CE9C49A00588EB7 /* CAPickerViewController.xib */; };
 		5822EEC91CE9C49A00588EB7 /* CAPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822EEC41CE9C49A00588EB7 /* CAPopOverViewController.m */; };
 		5822EECA1CE9C49A00588EB7 /* CAPopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5822EEC51CE9C49A00588EB7 /* CAPopOverViewController.xib */; };
+		5822EECC1CE9CFB700588EB7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5822EECB1CE9CFB700588EB7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5822EEC31CE9C49A00588EB7 /* CAPopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPopOverViewController.h; sourceTree = "<group>"; };
 		5822EEC41CE9C49A00588EB7 /* CAPopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPopOverViewController.m; sourceTree = "<group>"; };
 		5822EEC51CE9C49A00588EB7 /* CAPopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CAPopOverViewController.xib; sourceTree = "<group>"; };
+		5822EECB1CE9CFB700588EB7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		3AE4853B16EDE1A8003989BD = {
 			isa = PBXGroup;
 			children = (
+				5822EECB1CE9CFB700588EB7 /* README.md */,
 				582193BA1CD0CB7100A97437 /* Default-568h@2x.png */,
 				3AE4855016EDE1A8003989BD /* CAAlertView */,
 				3AE4854916EDE1A8003989BD /* Frameworks */,
@@ -198,6 +201,7 @@
 				3AE4855716EDE1A8003989BD /* main.m in Sources */,
 				5822EEC61CE9C49A00588EB7 /* CAAlertView.m in Sources */,
 				3AE4855B16EDE1A8003989BD /* AppDelegate.m in Sources */,
+				5822EECC1CE9CFB700588EB7 /* README.md in Sources */,
 				3AE4855E16EDE1A8003989BD /* ViewController.m in Sources */,
 				5822EEC71CE9C49A00588EB7 /* CAPickerViewController.m in Sources */,
 				5822EEC91CE9C49A00588EB7 /* CAPopOverViewController.m in Sources */,

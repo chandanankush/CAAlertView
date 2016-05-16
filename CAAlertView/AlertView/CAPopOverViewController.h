@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSMutableSet *selectedObjects;
 
 - (id) initWithDataSource:(NSArray *)dataS;
-- (void) modefyDataSource:(NSArray *) array;
+- (void) modifyDataSource:(NSArray *) array;
 @end
 
 @protocol CAPopOverViewControllerDelegate <NSObject>

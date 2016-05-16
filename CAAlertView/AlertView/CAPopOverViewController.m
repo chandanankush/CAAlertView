@@ -18,7 +18,8 @@
 
 - (id) initWithDataSource:(NSArray *)dataS {
     if (self = [super initWithStyle:UITableViewStylePlain]) {
-        _objectArray = [[NSMutableArray alloc] initWithArray:dataS];
+        _objectArray = [[NSMutableArray alloc] init];
+        [_objectArray addObjectsFromArray:dataS];
     }
     return self;
 }
@@ -38,13 +39,15 @@
     }
 }
 
-- (void) modefyDataSource:(NSArray *) array {
+- (void) modifyDataSource:(NSArray *) array {
+    
     if (!_objectArray) {
-        _objectArray = [[NSMutableArray alloc] initWithArray:array];
+        _objectArray = [[NSMutableArray alloc] init];
     }else {
         [_objectArray removeAllObjects];
-        [_objectArray addObjectsFromArray:array];
+        
     }
+    [_objectArray addObjectsFromArray:array];
 }
 
 #pragma mark
