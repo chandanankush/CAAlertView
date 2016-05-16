@@ -14,7 +14,7 @@
     UITableView *myTableView;
     UIDatePicker *picker;
 }
-@property (nonatomic, strong) UIAlertView *alertView;
+@property (nonatomic, strong) UIAlertController *alertView;
 @property (nonatomic, assign) CAAlertViewType myType;
 @property (nonatomic, strong) UIAlertView *myAlertView;
 
@@ -22,10 +22,6 @@
 @end
 
 @implementation CAAlertView
-@synthesize delegate = _delegate;
-@synthesize alertView = _alertView;
-@synthesize myType = _myType;
-@synthesize myAlertView = _myAlertView;
 
 - (id) initWithType:(CAAlertViewType) type andData:(NSArray *) array {
     if (self = [super init]) {
@@ -39,19 +35,22 @@
 
 - (void) configureAlertView {
     if (_myType == CAAlertViewTypeDatePicker) {
-        _myAlertView = [[UIAlertView alloc] initWithTitle:@"Select Date" message:@"\n\n\n\n\n\n\n"
-                                                 delegate:self 
-                                        cancelButtonTitle:@"Cancel"
-                                        otherButtonTitles:@"OK", nil];
+        
+        _alertView = [UIAlertController alertControllerWithTitle:@"Select Date" message:@"\n\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        [_alertView addAction:action];
         
         picker = [[UIDatePicker alloc] init];
         [picker setFrame:CGRectMake(10, 36, 264, 150)];
         [picker setDatePickerMode:UIDatePickerModeDate];
         [picker setMinimumDate:[NSDate date]];
-        
-       
         [_myAlertView addSubview:picker];
-       //  [_myAlertView sizeToFit];
+      
     }
     else {
      
@@ -69,7 +68,9 @@
 }
 
 - (void) showAlertView {
-     [_myAlertView show];
+     [(UIViewController *)_delegate presentViewController:_alertView animated:YES completion:^{
+         
+     }];
 }
 
 

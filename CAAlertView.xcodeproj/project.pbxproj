@@ -15,7 +15,9 @@
 		3AE4855B16EDE1A8003989BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4855A16EDE1A8003989BD /* AppDelegate.m */; };
 		3AE4855E16EDE1A8003989BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4855D16EDE1A8003989BD /* ViewController.m */; };
 		3AE4856116EDE1A8003989BD /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4855F16EDE1A8003989BD /* ViewController.xib */; };
-		3AE4856916EDE1E2003989BD /* CAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4856816EDE1E2003989BD /* CAAlertView.m */; };
+		582193B71CD0CB3000A97437 /* CAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582193B61CD0CB3000A97437 /* CAAlertView.m */; };
+		582193B91CD0CB4700A97437 /* CAAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582193B81CD0CB4700A97437 /* CAAlertView.xib */; };
+		582193BB1CD0CB7100A97437 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 582193BA1CD0CB7100A97437 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +34,10 @@
 		3AE4855C16EDE1A8003989BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3AE4855D16EDE1A8003989BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3AE4856016EDE1A8003989BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		3AE4856716EDE1E2003989BD /* CAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAAlertView.h; sourceTree = "<group>"; };
-		3AE4856816EDE1E2003989BD /* CAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAAlertView.m; sourceTree = "<group>"; };
+		582193B51CD0CB3000A97437 /* CAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAAlertView.h; sourceTree = "<group>"; };
+		582193B61CD0CB3000A97437 /* CAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAAlertView.m; sourceTree = "<group>"; };
+		582193B81CD0CB4700A97437 /* CAAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CAAlertView.xib; sourceTree = "<group>"; };
+		582193BA1CD0CB7100A97437 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 		3AE4853B16EDE1A8003989BD = {
 			isa = PBXGroup;
 			children = (
+				582193BA1CD0CB7100A97437 /* Default-568h@2x.png */,
 				3AE4855016EDE1A8003989BD /* CAAlertView */,
 				3AE4854916EDE1A8003989BD /* Frameworks */,
 				3AE4854716EDE1A8003989BD /* Products */,
@@ -80,14 +85,13 @@
 		3AE4855016EDE1A8003989BD /* CAAlertView */ = {
 			isa = PBXGroup;
 			children = (
+				582193B41CD0CB3000A97437 /* Classes */,
 				3AE4855916EDE1A8003989BD /* AppDelegate.h */,
 				3AE4855A16EDE1A8003989BD /* AppDelegate.m */,
 				3AE4855C16EDE1A8003989BD /* ViewController.h */,
 				3AE4855D16EDE1A8003989BD /* ViewController.m */,
 				3AE4855F16EDE1A8003989BD /* ViewController.xib */,
 				3AE4855116EDE1A8003989BD /* Supporting Files */,
-				3AE4856716EDE1E2003989BD /* CAAlertView.h */,
-				3AE4856816EDE1E2003989BD /* CAAlertView.m */,
 			);
 			path = CAAlertView;
 			sourceTree = "<group>";
@@ -101,6 +105,16 @@
 				3AE4855816EDE1A8003989BD /* CAAlertView-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		582193B41CD0CB3000A97437 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				582193B51CD0CB3000A97437 /* CAAlertView.h */,
+				582193B61CD0CB3000A97437 /* CAAlertView.m */,
+				582193B81CD0CB4700A97437 /* CAAlertView.xib */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +143,7 @@
 		3AE4853D16EDE1A8003989BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0720;
 			};
 			buildConfigurationList = 3AE4854016EDE1A8003989BD /* Build configuration list for PBXProject "CAAlertView" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -154,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE4855516EDE1A8003989BD /* InfoPlist.strings in Resources */,
+				582193BB1CD0CB7100A97437 /* Default-568h@2x.png in Resources */,
 				3AE4856116EDE1A8003989BD /* ViewController.xib in Resources */,
+				582193B91CD0CB4700A97437 /* CAAlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +184,7 @@
 				3AE4855716EDE1A8003989BD /* main.m in Sources */,
 				3AE4855B16EDE1A8003989BD /* AppDelegate.m in Sources */,
 				3AE4855E16EDE1A8003989BD /* ViewController.m in Sources */,
-				3AE4856916EDE1E2003989BD /* CAAlertView.m in Sources */,
+				582193B71CD0CB3000A97437 /* CAAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,12 +214,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -211,10 +236,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -223,16 +253,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -245,6 +287,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CAAlertView/CAAlertView-Prefix.pch";
 				INFOPLIST_FILE = "CAAlertView/CAAlertView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MidnightApps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -256,6 +300,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CAAlertView/CAAlertView-Prefix.pch";
 				INFOPLIST_FILE = "CAAlertView/CAAlertView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MidnightApps.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -280,6 +326,7 @@
 				3AE4856616EDE1A8003989BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
