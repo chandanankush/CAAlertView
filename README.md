@@ -7,5 +7,5 @@ Searching for dropdown selection control in iOS ? here i have written control us
 
 Developed and tested against iOS-9.
 
-![Screenshot](https://github.com/chandanankush/iOS-AutoComplete-TextField/blob/master/AutoComplete_Help.gif)
+![Screenshot](https://github.com/chandanankush/CAAlertView/blob/master/CAAlertView.gif)
 
