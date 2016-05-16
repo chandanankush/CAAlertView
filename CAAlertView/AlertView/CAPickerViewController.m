@@ -16,6 +16,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    [_myDatePicker addTarget:self action:@selector(pickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+    
+}
+
+- (void) pickerValueChanged:(id) sender {
+    
 }
 
 
