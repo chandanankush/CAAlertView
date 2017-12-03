@@ -11,48 +11,52 @@
 
 @interface ViewController () <CAAlertViewDelegate>
 
-@property (nonatomic, strong) CAAlertView *alertView;
+@property(nonatomic, strong) CAAlertView *alertView;
+@property(nonatomic, weak) IBOutlet UILabel *resultLabel;
 
 @end
 
-
 @implementation ViewController
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
 
 - (IBAction)btnShowDataAlert:(id)sender {
     
     NSMutableArray *objectToShow = [[NSMutableArray alloc] init];
-    for (int i = 0; i<=10; i++) {
-        CACustomAlertObject *object = [[CACustomAlertObject alloc] initWithObjectName:[NSString stringWithFormat:@"chandan %d",i] AndID:i];
+    for (int i = 0; i <= 10; i++) {
+        CACustomAlertObject *object = [[CACustomAlertObject alloc]
+                                       initWithObjectName:[NSString stringWithFormat:@"chandan %d", i]
+                                       AndID:i];
         [objectToShow addObject:object];
     }
     
-    _alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeTable andData:objectToShow];
-    [_alertView setDelegate:self];
+    _alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeTable
+                                           andData:objectToShow];
+    _alertView.delegate = self;
     [_alertView showAlertView:sender];
 }
-
 
 - (IBAction)btnShowDateAlert:(id)sender {
     
     _alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeDatePicker andData:nil];
-    [_alertView setDelegate:self];
+    _alertView.delegate = self;
     [_alertView showAlertView:sender];
 }
 
-
-- (void) CAAlertView:(CAAlertView *) obj completedWithData:(NSArray *) data {
+- (void)CAAlertView:(CAAlertView *)obj completedWithData:(NSArray <CACustomAlertObject*> *)data {
     NSLog(@"%@", data);
+    [self updateResultOnLabel:data];
 }
 
-- (void) CAAlertView:(CAAlertView *) obj cancelledWithNoData:(NSString *) info {
+- (void)CAAlertView:(CAAlertView *)obj cancelledWithNoData:(NSString *)info {
     NSLog(@"%@", info);
 }
 
+- (void)updateResultOnLabel:(NSArray <CACustomAlertObject*> *)result {
+    
+    if (result == nil || result.count == 0) {
+        return;
+    }
+    
+    _resultLabel.text = result.firstObject.objName;
+}
 
 @end

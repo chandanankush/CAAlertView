@@ -11,14 +11,14 @@
 
 @interface CAPopOverViewController : UITableViewController
 
-@property (nonatomic, assign) BOOL isMultipleSelectionAllowed;
-@property (nonatomic, assign) id<CAPopOverViewControllerDelegate>delegate;
-@property (nonatomic, strong) NSMutableSet *selectedObjects;
+@property(nonatomic, assign) BOOL isMultipleSelectionAllowed;
+@property(nonatomic, assign) id<CAPopOverViewControllerDelegate> delegate;
+@property(nonatomic, strong) NSMutableSet *selectedObjects;
 
-- (id) initWithDataSource:(NSArray *)dataS;
-- (void) modifyDataSource:(NSArray *) array;
+- (instancetype)initWithDataSource:(NSArray *)dataS NS_DESIGNATED_INITIALIZER;
+- (void)modifyDataSource:(NSArray *)array;
 @end
 
 @protocol CAPopOverViewControllerDelegate <NSObject>
-- (void) CAPopover:(CAPopOverViewController *) obj selectedData:(id) data;
+- (void)CAPopover:(CAPopOverViewController *)obj selectedData:(id)data;
 @end

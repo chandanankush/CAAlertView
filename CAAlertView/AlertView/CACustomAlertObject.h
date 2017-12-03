@@ -10,10 +10,12 @@
 
 @interface CACustomAlertObject : NSObject
 
-- (id) initWithObjectName:(NSString *) objName AndID:(NSInteger ) obID;
-@property (nonatomic, strong) NSString *objName;
-@property (nonatomic, assign)  NSInteger objID;
-@property (nonatomic, assign)  BOOL isSelectable;//default is YES
-@property (nonatomic, assign)  BOOL isDefaultSelected;
+- (instancetype)initWithObjectName:(NSString *)objName
+                             AndID:(NSInteger)obID NS_DESIGNATED_INITIALIZER;
+
+@property(nonatomic, strong) NSString *objName;
+@property(nonatomic, assign) NSInteger objID;
+@property(nonatomic, assign) BOOL isSelectable; // default is YES
+@property(nonatomic, assign) BOOL isDefaultSelected;
 
 @end

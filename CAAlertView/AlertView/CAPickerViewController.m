@@ -15,17 +15,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-    [_myDatePicker addTarget:self action:@selector(pickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     
+    [_myDatePicker addTarget:self
+                      action:@selector(pickerValueChanged:)
+            forControlEvents:UIControlEventValueChanged];
 }
 
-- (void) pickerValueChanged:(id) sender {
-    
+- (void)pickerValueChanged:(id)sender {
 }
 
-
-- (void) dealloc {
+- (void)dealloc {
     _myDatePicker = nil;
 }
 
