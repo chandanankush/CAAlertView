@@ -22,14 +22,11 @@
     
     NSMutableArray *objectToShow = [[NSMutableArray alloc] init];
     for (int i = 0; i <= 10; i++) {
-        CACustomAlertObject *object = [[CACustomAlertObject alloc]
-                                       initWithObjectName:[NSString stringWithFormat:@"chandan %d", i]
-                                       AndID:i];
+        CACustomAlertObject *object = [[CACustomAlertObject alloc] initWithObjectName:[NSString stringWithFormat:@"chandan %d", i] AndID:i];
         [objectToShow addObject:object];
     }
     
-    _alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeTable
-                                           andData:objectToShow];
+    _alertView = [[CAAlertView alloc] initWithType:CAAlertViewTypeTable andData:objectToShow];
     _alertView.delegate = self;
     [_alertView showAlertView:sender];
 }
@@ -41,7 +38,7 @@
     [_alertView showAlertView:sender];
 }
 
-- (void)alertView:(CAAlertView *)obj completedWithData:(NSArray <CACustomAlertObject*> *)data {
+- (void)alertView:(CAAlertView *)obj completedWithData:(NSArray<CACustomAlertObject *> *)data {
     NSLog(@"%@", data);
     [self updateResultOnLabel:data];
 }
@@ -50,7 +47,7 @@
     NSLog(@"%@", info);
 }
 
-- (void)updateResultOnLabel:(NSArray <CACustomAlertObject*> *)result {
+- (void)updateResultOnLabel:(NSArray<CACustomAlertObject *> *)result {
     
     if (result == nil || result.count == 0) {
         return;

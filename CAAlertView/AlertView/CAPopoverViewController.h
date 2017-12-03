@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CAPopoverViewController : UITableViewController
 
 @property(nonatomic, assign) BOOL isMultipleSelectionAllowed;
-@property(nonatomic, assign, nullable) id<CAPopOverViewControllerDelegate> delegate;
+@property(nonatomic, weak, nullable) id<CAPopOverViewControllerDelegate> delegate;
 @property(nonatomic, strong) NSMutableSet *selectedObjects;
 
 - (instancetype)initWithDataSource:(NSArray <CACustomAlertObject*>*)dataToShow NS_DESIGNATED_INITIALIZER;

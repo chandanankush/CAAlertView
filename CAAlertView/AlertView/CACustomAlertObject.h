@@ -13,8 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CACustomAlertObject : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithObjectName:(NSString *)objName
-                             AndID:(NSInteger)obID NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithObjectName:(NSString *)objName AndID:(NSInteger)obID NS_DESIGNATED_INITIALIZER;
 
 @property(nonatomic, strong) NSString *objName;
 @property(nonatomic, assign) NSInteger objID;

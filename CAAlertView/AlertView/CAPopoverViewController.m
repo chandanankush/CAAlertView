@@ -10,7 +10,7 @@
 #import "CACustomAlertObject.h"
 
 @interface CAPopoverViewController ()
-@property(nonatomic, strong) NSMutableArray <CACustomAlertObject*> *objectArray;
+@property(nonatomic, strong) NSMutableArray<CACustomAlertObject *> *objectArray;
 @end
 
 @implementation CAPopoverViewController
@@ -28,8 +28,7 @@
     _selectedObjects = [[NSMutableSet alloc] init];
     
     if (_objectArray && _objectArray.count > 0) {
-        NSPredicate *p =
-        [NSPredicate predicateWithFormat:@"isDefaultSelected == YES"];
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"isDefaultSelected == YES"];
         NSArray *filteredArray = [_objectArray filteredArrayUsingPredicate:p];
         
         if (filteredArray && filteredArray.count > 0) {
@@ -55,8 +54,7 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _objectArray.count;
 }
 
@@ -64,11 +62,10 @@
     
     static NSString *TableCellID = @"TableCell";
     
-    UITableViewCell *aCell =  [tableView dequeueReusableCellWithIdentifier:TableCellID];
+    UITableViewCell *aCell = [tableView dequeueReusableCellWithIdentifier:TableCellID];
     CGFloat version = [UIDevice currentDevice].systemVersion.floatValue;
     if (aCell == nil) {
-        aCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:TableCellID];
+        aCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TableCellID];
         aCell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     aCell.accessoryType = UITableViewCellAccessoryNone;
@@ -100,8 +97,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CACustomAlertObject *object = _objectArray[indexPath.row];
-    if ([object isKindOfClass:[NSString class]] &&
-        [(NSString *)object isEqualToString:@"No Data To Display"]) {
+    if ([object isKindOfClass:[NSString class]] && [(NSString *)object isEqualToString:@"No Data To Display"]) {
         
         if ([_delegate respondsToSelector:@selector(popover:selectedData:)]) {
             [_delegate popover:self selectedData:nil];
@@ -114,8 +110,7 @@
         } else {
             [_selectedObjects addObject:object];
         }
-        [self.tableView reloadRowsAtIndexPaths:@[ indexPath ]
-                              withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
     } else {
         [_selectedObjects removeAllObjects];
         [_selectedObjects addObject:object];
@@ -128,8 +123,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     CACustomAlertObject *object = _objectArray[indexPath.row];
-    if ([object isKindOfClass:[NSString class]] &&
-        [(NSString *)object isEqualToString:@"No Data To Display"]) {
+    if ([object isKindOfClass:[NSString class]] && [(NSString *)object isEqualToString:@"No Data To Display"]) {
         return NO;
     }
     if (object.isSelectable) {
