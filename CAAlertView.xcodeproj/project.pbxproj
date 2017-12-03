@@ -19,7 +19,7 @@
 		5822EEC61CE9C49A00588EB7 /* CAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822EEBF1CE9C49A00588EB7 /* CAAlertView.m */; };
 		5822EEC71CE9C49A00588EB7 /* CAPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822EEC11CE9C49A00588EB7 /* CAPickerViewController.m */; };
 		5822EEC81CE9C49A00588EB7 /* CAPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5822EEC21CE9C49A00588EB7 /* CAPickerViewController.xib */; };
-		5822EEC91CE9C49A00588EB7 /* CAPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822EEC41CE9C49A00588EB7 /* CAPopOverViewController.m */; };
+		5822EEC91CE9C49A00588EB7 /* CAPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5822EEC41CE9C49A00588EB7 /* CAPopoverViewController.m */; };
 		5822EECA1CE9C49A00588EB7 /* CAPopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5822EEC51CE9C49A00588EB7 /* CAPopOverViewController.xib */; };
 		5822EECC1CE9CFB700588EB7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5822EECB1CE9CFB700588EB7 /* README.md */; };
 		5880780D1CE9DF7A00AF3F67 /* CACustomAlertObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5880780C1CE9DF7A00AF3F67 /* CACustomAlertObject.m */; };
@@ -45,8 +45,8 @@
 		5822EEC01CE9C49A00588EB7 /* CAPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPickerViewController.h; sourceTree = "<group>"; };
 		5822EEC11CE9C49A00588EB7 /* CAPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPickerViewController.m; sourceTree = "<group>"; };
 		5822EEC21CE9C49A00588EB7 /* CAPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CAPickerViewController.xib; sourceTree = "<group>"; };
-		5822EEC31CE9C49A00588EB7 /* CAPopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPopOverViewController.h; sourceTree = "<group>"; };
-		5822EEC41CE9C49A00588EB7 /* CAPopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPopOverViewController.m; sourceTree = "<group>"; };
+		5822EEC31CE9C49A00588EB7 /* CAPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPopoverViewController.h; sourceTree = "<group>"; };
+		5822EEC41CE9C49A00588EB7 /* CAPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPopoverViewController.m; sourceTree = "<group>"; };
 		5822EEC51CE9C49A00588EB7 /* CAPopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CAPopOverViewController.xib; sourceTree = "<group>"; };
 		5822EECB1CE9CFB700588EB7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5880780B1CE9DF7A00AF3F67 /* CACustomAlertObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CACustomAlertObject.h; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 				5822EEC01CE9C49A00588EB7 /* CAPickerViewController.h */,
 				5822EEC11CE9C49A00588EB7 /* CAPickerViewController.m */,
 				5822EEC21CE9C49A00588EB7 /* CAPickerViewController.xib */,
-				5822EEC31CE9C49A00588EB7 /* CAPopOverViewController.h */,
-				5822EEC41CE9C49A00588EB7 /* CAPopOverViewController.m */,
+				5822EEC31CE9C49A00588EB7 /* CAPopoverViewController.h */,
+				5822EEC41CE9C49A00588EB7 /* CAPopoverViewController.m */,
 				5822EEC51CE9C49A00588EB7 /* CAPopOverViewController.xib */,
 				5880780B1CE9DF7A00AF3F67 /* CACustomAlertObject.h */,
 				5880780C1CE9DF7A00AF3F67 /* CACustomAlertObject.m */,
@@ -210,7 +210,7 @@
 				3AE4855E16EDE1A8003989BD /* ViewController.m in Sources */,
 				5822EEC71CE9C49A00588EB7 /* CAPickerViewController.m in Sources */,
 				5880780D1CE9DF7A00AF3F67 /* CACustomAlertObject.m in Sources */,
-				5822EEC91CE9C49A00588EB7 /* CAPopOverViewController.m in Sources */,
+				5822EEC91CE9C49A00588EB7 /* CAPopoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

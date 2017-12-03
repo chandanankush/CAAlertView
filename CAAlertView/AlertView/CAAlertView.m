@@ -7,7 +7,7 @@
 
 #import "CAAlertView.h"
 #import "CAPickerViewController.h"
-#import "CAPopOverViewController.h"
+#import "CAPopoverViewController.h"
 #import "CACustomAlertObject.h"
 
 #define isiPhone5 YES
@@ -16,7 +16,7 @@
 @interface CAAlertView () <CAPopOverViewControllerDelegate, UIPopoverPresentationControllerDelegate>
 
 @property(nonatomic, strong) NSArray <CACustomAlertObject*>*objectArray;
-@property(nonatomic, strong) CAPopOverViewController *tablePopOver;
+@property(nonatomic, strong) CAPopoverViewController *tablePopoverRef;
 @property(nonatomic, strong) CAPickerViewController *datePickerPopOver;
 
 - (void)configureAlertView;
@@ -25,20 +25,15 @@ NSString *kformatDateToString(NSDate *date);
 NSString *kformatDateAndTimeToString(NSDate *date);
 @end
 
-#pragma mark
-#pragma mark setter getter
 @implementation CAAlertView
 
-#pragma mark
-#pragma mark Class constructor
+// MARK: -
+// MARK: - Class constructor
 - (instancetype)initWithType:(CAAlertViewType)type andData:(NSArray *)array {
     if (self = [super init]) {
         _pickerType = type;
         if (_pickerType == CAAlertViewTypeTable) {
-            _objectArray =
-            [[NSArray alloc] initWithArray:(array && array.count > 0
-                                            ? array
-                                            : @[ @"No Data To Display" ])];
+            _objectArray = [[NSArray alloc] initWithArray:(array && array.count > 0 ? array : @[ @"No Data To Display" ])];
         }
         _isDatePickerTypeDOB = YES;
         _isDateAndTimeBoth = NO;
@@ -47,13 +42,13 @@ NSString *kformatDateAndTimeToString(NSDate *date);
     return self;
 }
 
-#pragma mark
-#pragma mark Configuring Alert
+// MARK: -
+// MARK: - Configuring Alert
 - (void)configureAlertView {
     if (_pickerType == CAAlertViewTypeDatePicker) {
         _datePickerPopOver = self.datePickerPopOver;
     } else {
-        _tablePopOver = [self tablepopOver];
+        _tablePopoverRef = [self tablePopover];
     }
 }
 
@@ -74,41 +69,42 @@ NSString *kformatDateAndTimeToString(NSDate *date);
         [controller presentViewController:_datePickerPopOver
                                  animated:YES
                                completion:^{
-                                   
+                                   // any logic after view presented
                                }];
     } else {
         
         UIView *v = (UIView *)sender;
-        UIPopoverPresentationController *ppc =
-        _tablePopOver.popoverPresentationController;
+        UIPopoverPresentationController *ppc = _tablePopoverRef.popoverPresentationController;
         ppc.delegate = self;
         
-        _tablePopOver.popoverPresentationController.sourceView = v;
-        _tablePopOver.popoverPresentationController.sourceRect = v.bounds;
-        [controller presentViewController:_tablePopOver
+        _tablePopoverRef.popoverPresentationController.sourceView = v;
+        _tablePopoverRef.popoverPresentationController.sourceRect = v.bounds;
+        [controller presentViewController:_tablePopoverRef
                                  animated:YES
                                completion:^{
-                                   
+                                   // any logic after view presented
                                }];
     }
 }
 
-- (CAPopOverViewController *)tablepopOver {
+// MARK: - Configure Table Popover
+- (CAPopoverViewController *)tablePopover {
     
-    if (!_tablePopOver) {
-        _tablePopOver =
-        [[CAPopOverViewController alloc] initWithDataSource:_objectArray];
-        _tablePopOver.delegate = self;
+    if (!_tablePopoverRef) {
+        _tablePopoverRef =
+        [[CAPopoverViewController alloc] initWithDataSource:_objectArray];
+        _tablePopoverRef.delegate = self;
     } else {
-        [_tablePopOver modifyDataSource:_objectArray];
+        [_tablePopoverRef modifyDataSource:_objectArray];
     }
-    _tablePopOver.isMultipleSelectionAllowed = _isMultipleSelectionAllowed;
+    _tablePopoverRef.isMultipleSelectionAllowed = _isMultipleSelectionAllowed;
     
-    _tablePopOver.preferredContentSize = CGSizeMake(200.0f, 300.0f);
-    _tablePopOver.modalPresentationStyle = UIModalPresentationPopover;
-    return _tablePopOver;
+    _tablePopoverRef.preferredContentSize = CGSizeMake(200.0f, 300.0f);
+    _tablePopoverRef.modalPresentationStyle = UIModalPresentationPopover;
+    return _tablePopoverRef;
 }
 
+// MARK: - Configure Date Picker
 - (CAPickerViewController *)datePickerPopOver {
     
     if (!_datePickerPopOver) {
@@ -129,51 +125,46 @@ NSString *kformatDateAndTimeToString(NSDate *date);
     return _datePickerPopOver;
 }
 
-- (void)CAPopover:(CAPopOverViewController *)obj selectedData:(id)data {
-    if ([_delegate
-         respondsToSelector:@selector(CAAlertView:completedWithData:)]) {
+// MARK: - Table Popover Delegate
+- (void)popover:(nonnull CAPopoverViewController *)obj selectedData:(nullable CACustomAlertObject *)data {
+    if ([_delegate respondsToSelector:@selector(alertView:completedWithData:)]) {
         if (_pickerType == CAAlertViewTypeTable) {
-            [_delegate CAAlertView:self completedWithData:@[ data ]];
+            [_delegate alertView:self completedWithData:@[ data ]];
         }
     }
 }
 
-- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:
-(UIPresentationController *)controller {
-    
+// MARK: - UIPopover Delegate
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController: (UIPresentationController *)controller {
     return UIModalPresentationNone;
 }
 
-- (void)popoverPresentationControllerDidDismissPopover:
-(UIPopoverPresentationController *)popoverPresentationController {
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
     
     if (_pickerType == CAAlertViewTypeDatePicker) {
-        if ([_delegate
-             respondsToSelector:@selector(CAAlertView:completedWithData:)]) {
+        if ([_delegate respondsToSelector:@selector(alertView:completedWithData:)]) {
             
-            NSString *d = nil;
+            NSString *dateString = nil;
             if (_isDateAndTimeBoth) {
-                d = kformatDateAndTimeToString(_datePickerPopOver.myDatePicker.date);
+                dateString = kformatDateAndTimeToString(_datePickerPopOver.myDatePicker.date);
             } else {
-                d = kformatDateToString(_datePickerPopOver.myDatePicker.date);
+                dateString = kformatDateToString(_datePickerPopOver.myDatePicker.date);
             }
-            if (d) {
-                CACustomAlertObject *obj =
-                [[CACustomAlertObject alloc] initWithObjectName:d AndID:1];
-                [_delegate CAAlertView:self completedWithData:@[ obj ]];
+            if (dateString) {
+                CACustomAlertObject *obj = [[CACustomAlertObject alloc] initWithObjectName:dateString AndID:1];
+                [_delegate alertView:self completedWithData:@[ obj ]];
             }
         }
     } else {
         if (_isMultipleSelectionAllowed) {
-            if ([_delegate
-                 respondsToSelector:@selector(CAAlertView:completedWithData:)]) {
-                [_delegate CAAlertView:self
-                     completedWithData:_tablePopOver.selectedObjects.allObjects];
+            if ([_delegate respondsToSelector:@selector(alertView:completedWithData:)]) {
+                [_delegate alertView:self completedWithData:_tablePopoverRef.selectedObjects.allObjects];
             }
         }
     }
 }
 
+// MARK: - Helper Methods
 NSString *kformatDateToString(NSDate *date) {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MM-dd-yyyy";
@@ -190,13 +181,13 @@ NSString *kformatDateAndTimeToString(NSDate *date) {
     return dateString;
 }
 
-#pragma mark
-#pragma mark releasing object
+// MARK: -
+// MARK: - releasing object
 - (void)dealloc {
     
-    if (_tablePopOver) {
-        [_tablePopOver dismissViewControllerAnimated:NO completion:nil];
-        _tablePopOver = nil;
+    if (_tablePopoverRef) {
+        [_tablePopoverRef dismissViewControllerAnimated:NO completion:nil];
+        _tablePopoverRef = nil;
     }
     
     if (_datePickerPopOver) {

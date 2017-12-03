@@ -5,21 +5,20 @@
 //  Created by Chandan on 16/05/16.
 //
 
-#import "CAPopOverViewController.h"
+#import "CAPopoverViewController.h"
 #import "CAAlertView.h"
 #import "CACustomAlertObject.h"
 
-@interface CAPopOverViewController ()
-@property(nonatomic, strong) NSMutableArray *objectArray;
-
+@interface CAPopoverViewController ()
+@property(nonatomic, strong) NSMutableArray <CACustomAlertObject*> *objectArray;
 @end
 
-@implementation CAPopOverViewController
+@implementation CAPopoverViewController
 
-- (instancetype)initWithDataSource:(NSArray *)dataS {
+- (instancetype)initWithDataSource:(NSArray *)dataToShow {
     if (self = [super initWithStyle:UITableViewStylePlain]) {
         _objectArray = [[NSMutableArray alloc] init];
-        [_objectArray addObjectsFromArray:dataS];
+        [_objectArray addObjectsFromArray:dataToShow];
     }
     return self;
 }
@@ -50,8 +49,8 @@
     [_objectArray addObjectsFromArray:array];
 }
 
-#pragma mark
-#pragma mark UITableView Datasource
+// MARK: -
+// MARK: - UITableView Datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -61,13 +60,11 @@
     return _objectArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *TableCellID = @"TableCell";
     
-    UITableViewCell *aCell =
-    [tableView dequeueReusableCellWithIdentifier:TableCellID];
+    UITableViewCell *aCell =  [tableView dequeueReusableCellWithIdentifier:TableCellID];
     CGFloat version = [UIDevice currentDevice].systemVersion.floatValue;
     if (aCell == nil) {
         aCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
@@ -79,7 +76,7 @@
         aCell.backgroundColor = [UIColor clearColor];
     } else {
         (aCell.textLabel).textColor = [UIColor blackColor];
-        aCell.selected = FALSE;
+        aCell.selected = false;
     }
     CACustomAlertObject *toShow = _objectArray[indexPath.row];
     
@@ -98,17 +95,16 @@
     return aCell;
 }
 
-#pragma mark
-#pragma mark UITableView Delegate
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+// MARK: -
+// MARK: - UITableView Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CACustomAlertObject *object = _objectArray[indexPath.row];
     if ([object isKindOfClass:[NSString class]] &&
         [(NSString *)object isEqualToString:@"No Data To Display"]) {
         
-        if ([_delegate respondsToSelector:@selector(CAPopover:selectedData:)]) {
-            [_delegate CAPopover:self selectedData:nil];
+        if ([_delegate respondsToSelector:@selector(popover:selectedData:)]) {
+            [_delegate popover:self selectedData:nil];
         }
         return;
     }
@@ -124,14 +120,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [_selectedObjects removeAllObjects];
         [_selectedObjects addObject:object];
         [self.tableView reloadData];
-        if ([_delegate respondsToSelector:@selector(CAPopover:selectedData:)]) {
-            [_delegate CAPopover:self selectedData:object];
+        if ([_delegate respondsToSelector:@selector(popover:selectedData:)]) {
+            [_delegate popover:self selectedData:object];
         }
     }
 }
 
-- (BOOL)tableView:(UITableView *)tableView
-shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     CACustomAlertObject *object = _objectArray[indexPath.row];
     if ([object isKindOfClass:[NSString class]] &&
         [(NSString *)object isEqualToString:@"No Data To Display"]) {

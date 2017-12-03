@@ -41,12 +41,12 @@
     [_alertView showAlertView:sender];
 }
 
-- (void)CAAlertView:(CAAlertView *)obj completedWithData:(NSArray <CACustomAlertObject*> *)data {
+- (void)alertView:(CAAlertView *)obj completedWithData:(NSArray <CACustomAlertObject*> *)data {
     NSLog(@"%@", data);
     [self updateResultOnLabel:data];
 }
 
-- (void)CAAlertView:(CAAlertView *)obj cancelledWithNoData:(NSString *)info {
+- (void)alertView:(CAAlertView *)obj cancelledWithNoData:(NSString *)info {
     NSLog(@"%@", info);
 }
 
