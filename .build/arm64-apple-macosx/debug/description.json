@@ -1,0 +1,546 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.CAAlertView-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/sources",
+      "importPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertDatePickerView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertItem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertListView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertViewTypes.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "CAAlertView",
+      "moduleOutputPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules/CAAlertView.swiftmodule",
+      "objects" : [
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertDatePickerView.swift.o",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertItem.swift.o",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertListView.swift.o",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/CAAlertView.swift.o",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/CAAlertViewTypes.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/include/CAAlertView-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "caalertview"
+      ],
+      "outputFileMapPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertDatePickerView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertItem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertListView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/CAAlertView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/CAAlertViewTypes.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules/CAAlertView.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertDatePickerView.swift",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertItem.swift",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertListView.swift",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertView.swift",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertViewTypes.swift"
+      ],
+      "tempsPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.CAAlertViewDemo-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/sources",
+      "importPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/CAAlertViewDemoApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules/CAAlertView.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "CAAlertViewDemo",
+      "moduleOutputPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules/CAAlertViewDemo.swiftmodule",
+      "objects" : [
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp.swift.o",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "CAAlertViewDemo_main",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "caalertview"
+      ],
+      "outputFileMapPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules/CAAlertViewDemo.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/CAAlertViewDemoApp.swift",
+        "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/ContentView.swift"
+      ],
+      "tempsPath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "CAAlertView" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CAAlertView",
+      "-package-name",
+      "caalertview",
+      "-c",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertDatePickerView.swift",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertItem.swift",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertListView.swift",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertView.swift",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertViewTypes.swift",
+      "-I",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/include/CAAlertView-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "caalertview",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "CAAlertViewDemo" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CAAlertViewDemo",
+      "-package-name",
+      "caalertview",
+      "-c",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/CAAlertViewDemoApp.swift",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/ContentView.swift",
+      "-I",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "CAAlertViewDemo_main",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "caalertview",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "CAAlertView" : [
+
+    ],
+    "CAAlertViewDemo" : [
+      "CAAlertView"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertDatePickerView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertItem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/AlertListView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertView/CAAlertViewTypes.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/sources"
+    },
+    "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo-entitlement.plist"
+    },
+    "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/CAAlertViewDemoApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/ContentView.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/sources"
+    },
+    "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertDatePickerView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertItem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/AlertListView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/CAAlertView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertView.build/CAAlertViewTypes.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.product/Objects.LinkFileList"
+    },
+    "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

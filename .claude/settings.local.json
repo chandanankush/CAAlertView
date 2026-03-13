@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout claude/migrate-swift-swiftui-fZ9I5)",
+      "Bash(swift build)",
+      "Bash(xcrun simctl list devices available --json)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\)[''devices'']; devs=[\\(k,v\\) for k,vl in d.items\\(\\) for v in vl if v[''isAvailable''] and ''iPhone'' in v[''name'']]; print\\(''\\\\n''.join\\(f\"\"{v[''udid'']} | {v[''name'']} | {k}\"\" for k,v in devs[:5]\\)\\)\")",
+      "Bash(xcodebuild -list -project /Users/chandansingh/Documents/project/Github/CAAlertView/CAAlertView.xcodeproj)",
+      "Bash(swift build --target CAAlertViewDemo)",
+      "Bash(SIMULATOR_ID=\"FDE6DE48-45A8-4347-99FB-3FC2247843A0\")",
+      "Bash(xcrun simctl boot \"$SIMULATOR_ID\")",
+      "Bash(xcodebuild -scheme CAAlertViewDemo -destination \"platform=iOS Simulator,id=FDE6DE48-45A8-4347-99FB-3FC2247843A0\" -derivedDataPath /tmp/CAAlertViewDemoDD build)",
+      "Bash(mkdir -p /tmp/CAAlertViewPkg)",
+      "Bash(cp /Users/chandansingh/Documents/project/Github/CAAlertView/Package.swift /tmp/CAAlertViewPkg/)",
+      "Bash(cp -R /Users/chandansingh/Documents/project/Github/CAAlertView/Sources /tmp/CAAlertViewPkg/)",
+      "Read(//tmp/**)",
+      "Bash(cp /Users/chandansingh/Documents/project/Github/CAAlertView/Package.swift .)",
+      "Bash(cp -R /Users/chandansingh/Documents/project/Github/CAAlertView/Sources .)",
+      "Bash(APP_DIR=/tmp/CAAlertViewDemo.app)",
+      "Bash(cp /tmp/CAAlertViewDemoDD/Build/Products/Debug-iphonesimulator/CAAlertViewDemo \"$APP_DIR/CAAlertViewDemo\")",
+      "Bash(codesign --force --sign - \"$APP_DIR\")",
+      "Bash(xcrun simctl install \"$SIMULATOR_ID\" \"$APP_DIR\")",
+      "Bash(xcrun simctl launch \"$SIMULATOR_ID\" com.example.CAAlertViewDemo)",
+      "Bash(git add Package.swift README.md Sources/CAAlertView/AlertDatePickerView.swift Sources/CAAlertView/AlertListView.swift Sources/CAAlertView/CAAlertView.swift Sources/CAAlertViewDemo/CAAlertViewDemoApp.swift)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git restore CAAlertView.xcodeproj/)",
+      "Bash(git rm -r CAAlertView.xcodeproj/)",
+      "Bash(swift package generate-xcodeproj)",
+      "Bash(brew list xcodegen)"
+    ]
+  }
+}

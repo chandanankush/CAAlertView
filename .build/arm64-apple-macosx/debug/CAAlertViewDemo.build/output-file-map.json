@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/master.swiftdeps"
+  },
+  "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/CAAlertViewDemoApp.swift": {
+    "dependencies": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp.d",
+    "object": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp.swift.o",
+    "swiftmodule": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp.swiftdeps",
+    "diagnostics": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/CAAlertViewDemoApp.dia"
+  },
+  "/Users/chandansingh/Documents/project/Github/CAAlertView/Sources/CAAlertViewDemo/ContentView.swift": {
+    "dependencies": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView.d",
+    "object": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView.swift.o",
+    "swiftmodule": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/chandansingh/Documents/project/Github/CAAlertView/.build/arm64-apple-macosx/debug/CAAlertViewDemo.build/ContentView.dia"
+  }
+}

@@ -1,5 +1,4 @@
 import SwiftUI
-import CAAlertView
 
 /// Demo app that exercises every feature of `CAAlertView`.
 /// Replaces `ViewController.m` from the Objective-C implementation.
