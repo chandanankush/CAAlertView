@@ -22,7 +22,15 @@ public struct CAAlertViewModifier: ViewModifier {
 
     public func body(content: Content) -> some View {
         content.popover(isPresented: $isPresented) {
-            popoverContent
+            // Force a real popover with an arrow on compact (iPhone) screens,
+            // matching the original UIModalPresentationPopover + adaptivePresentationStyle=.none.
+            // Available from iOS 16.4 / macOS 14; older OSes fall back to the system sheet.
+            if #available(iOS 16.4, macOS 14.0, *) {
+                popoverContent
+                    .presentationCompactAdaptation(.popover)
+            } else {
+                popoverContent
+            }
         }
     }
 
@@ -50,10 +58,6 @@ public struct CAAlertViewModifier: ViewModifier {
                 onComplete: { result in
                     isPresented = false
                     onComplete(result)
-                },
-                onCancel: { info in
-                    isPresented = false
-                    onCancel(info)
                 }
             )
         }

@@ -5,7 +5,8 @@ let package = Package(
     name: "CAAlertView",
     platforms: [
         .iOS(.v16),
-        .macCatalyst(.v16)
+        .macCatalyst(.v16),
+        .macOS(.v13)
     ],
     products: [
         .library(
@@ -17,6 +18,11 @@ let package = Package(
         .target(
             name: "CAAlertView",
             path: "Sources/CAAlertView"
+        ),
+        .executableTarget(
+            name: "CAAlertViewDemo",
+            dependencies: ["CAAlertView"],
+            path: "Sources/CAAlertViewDemo"
         )
     ]
 )

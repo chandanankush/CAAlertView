@@ -3,66 +3,65 @@ import SwiftUI
 /// A SwiftUI date picker shown inside a popover.
 /// Replaces `CAPickerViewController` from the Objective-C implementation.
 ///
-/// - Supports DOB mode (maximum date = today) and future-date mode (minimum date = today).
-/// - Supports date-only and date+time display.
-/// - Returns the selected date as an `AlertItem` whose `name` is the formatted date string.
+/// - Uses wheel style (iOS) to match the original UIDatePicker presentation.
+/// - Returns the selected date when the popover is dismissed (tap outside),
+///   exactly matching the original `popoverPresentationControllerDidDismissPopover:` behaviour.
 struct AlertDatePickerView: View {
     // MARK: - Configuration
 
     let datePickerMode: DatePickerMode
     let datePickerComponents: DatePickerComponents
     let onComplete: ([AlertItem]) -> Void
-    let onCancel: (String) -> Void
 
     // MARK: - State
 
     @State private var selectedDate: Date = .init()
-    @Environment(\.dismiss) private var dismiss
 
     // MARK: - Body
 
     var body: some View {
-        VStack(spacing: 12) {
-            picker
-            Button("Done", action: confirm)
-                .buttonStyle(.borderedProminent)
-        }
-        .padding()
-        .frame(width: 300, height: 150)
+        picker
+            .frame(width: 300, height: 230)
+            .onDisappear { complete() }
     }
 
     // MARK: - Subviews
 
-    /// Renders the correct `DatePicker` for the selected mode and component set.
     @ViewBuilder
     private var picker: some View {
         switch (datePickerMode, datePickerComponents) {
         case (.dob, .dateOnly):
-            DatePicker("", selection: $selectedDate, in: ...Date(), displayedComponents: .date)
-                .datePickerStyle(.compact).labelsHidden()
+            styledPicker(DatePicker("", selection: $selectedDate, in: ...Date(), displayedComponents: .date))
 
         case (.dob, .dateAndTime):
-            DatePicker("", selection: $selectedDate, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
-                .datePickerStyle(.compact).labelsHidden()
+            styledPicker(DatePicker("", selection: $selectedDate, in: ...Date(), displayedComponents: [.date, .hourAndMinute]))
 
         case (.future, .dateOnly):
-            DatePicker("", selection: $selectedDate, in: Date()..., displayedComponents: .date)
-                .datePickerStyle(.compact).labelsHidden()
+            styledPicker(DatePicker("", selection: $selectedDate, in: Date()..., displayedComponents: .date))
 
         case (.future, .dateAndTime):
-            DatePicker("", selection: $selectedDate, in: Date()..., displayedComponents: [.date, .hourAndMinute])
-                .datePickerStyle(.compact).labelsHidden()
+            styledPicker(DatePicker("", selection: $selectedDate, in: Date()..., displayedComponents: [.date, .hourAndMinute]))
         }
+    }
+
+    /// Applies `.wheel` on iOS (matching the original UIDatePicker).
+    /// Falls back to the platform default on macOS.
+    @ViewBuilder
+    private func styledPicker(_ dp: DatePicker<Text>) -> some View {
+        #if os(iOS)
+        dp.datePickerStyle(.wheel).labelsHidden()
+        #else
+        dp.labelsHidden()
+        #endif
     }
 
     // MARK: - Actions
 
-    private func confirm() {
+    private func complete() {
         let formatter = DateFormatter()
         formatter.dateFormat = datePickerComponents == .dateAndTime ? "MM-dd-yyyy HH:mm" : "MM-dd-yyyy"
-        // ID 0 is the conventional identifier for date results, matching the original ObjC behaviour.
-        let result = AlertItem(id: 0, name: formatter.string(from: selectedDate))
-        dismiss()
+        // ID 1 matches the original ObjC `initWithObjectName:AndID:1` call.
+        let result = AlertItem(id: 1, name: formatter.string(from: selectedDate))
         onComplete([result])
     }
 }

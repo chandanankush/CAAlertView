@@ -13,7 +13,9 @@ struct AlertListView: View {
     // MARK: - State
 
     @State private var selectedIDs: Set<Int>
-    @Environment(\.dismiss) private var dismiss
+    /// Tracks whether a result has already been delivered (single-selection tap),
+    /// so `onDisappear` doesn't fire a second callback.
+    @State private var completed = false
 
     // MARK: - Init
 
@@ -28,7 +30,7 @@ struct AlertListView: View {
         self.onComplete = onComplete
         self.onCancel = onCancel
 
-        // Pre-select default-selected items
+        // Pre-select default-selected items (matches ObjC `viewDidLoad` logic).
         let defaults = items
             .filter { $0.isSelectable && $0.isDefaultSelected }
             .map(\.id)
@@ -46,6 +48,13 @@ struct AlertListView: View {
             }
         }
         .frame(width: 200, height: 300)
+        // Multiple-selection: deliver the result when the popover is dismissed by
+        // tapping outside — matches `popoverPresentationControllerDidDismissPopover:`.
+        .onDisappear {
+            guard isMultipleSelection, !completed else { return }
+            let selected = items.filter { selectedIDs.contains($0.id) }
+            onComplete(selected)
+        }
     }
 
     // MARK: - Subviews
@@ -63,12 +72,6 @@ struct AlertListView: View {
                 .onTapGesture { handleTap(on: item) }
         }
         .listStyle(.plain)
-        // For multiple selection, show a Done button to confirm
-        .overlay(alignment: .top) {
-            if isMultipleSelection {
-                multiSelectionToolbar
-            }
-        }
     }
 
     private func row(for item: AlertItem) -> some View {
@@ -84,17 +87,6 @@ struct AlertListView: View {
         .padding(.vertical, 4)
     }
 
-    /// Floating "Done" bar for multiple-selection mode.
-    private var multiSelectionToolbar: some View {
-        HStack {
-            Spacer()
-            Button("Done") { confirmMultipleSelection() }
-                .padding(.horizontal)
-                .padding(.vertical, 8)
-        }
-        .background(.thinMaterial)
-    }
-
     // MARK: - Actions
 
     private func handleTap(on item: AlertItem) {
@@ -107,19 +99,10 @@ struct AlertListView: View {
                 selectedIDs.insert(item.id)
             }
         } else {
-            // Single selection — return immediately
+            // Single selection — deliver result immediately, then close the popover.
+            // Matches ObjC `popover:selectedData:` → immediate delegate call.
+            completed = true
             let selected = items.filter { $0.id == item.id }
-            dismiss()
-            onComplete(selected)
-        }
-    }
-
-    private func confirmMultipleSelection() {
-        let selected = items.filter { selectedIDs.contains($0.id) }
-        dismiss()
-        if selected.isEmpty {
-            onCancel("No items selected")
-        } else {
             onComplete(selected)
         }
     }
